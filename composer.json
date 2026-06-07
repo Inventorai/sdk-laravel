@@ -1,7 +1,6 @@
 {
     "name": "inventorai/laravel",
     "description": "Laravel integration for the Inventorai SDK",
-    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "require": {

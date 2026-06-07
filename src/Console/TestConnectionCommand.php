@@ -23,12 +23,10 @@ class TestConnectionCommand extends Command
         $this->newLine();
 
         try {
-            $user = $client->user()->me();
+            $team = $client->team()->current();
 
             $this->info('Connection successful!');
-            $this->newLine();
-            $this->line("  User: {$user['data']['full_name']}");
-            $this->line("  Email: {$user['data']['email']}");
+            $this->line("  Team: {$team['data']['name']}");
 
             return self::SUCCESS;
         } catch (AuthenticationException $e) {

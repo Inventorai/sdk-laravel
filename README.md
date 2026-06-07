@@ -103,7 +103,21 @@ Inventorai::properties()->deleteCoverImage($propertyId);
 
 ```php
 Inventorai::inspections()->list($params);
-Inventorai::inspections()->get($id, $params);
+
+// One call returns the whole inspection tree — property, tenancy, areas →
+// items → elements (with photos auto-loaded), meter readings, keys, asset
+// checks, and compliance form responses. Prefer this over chaining the
+// sub-resource list() calls below for reads.
+Inventorai::inspections()->get($id, [
+    'include' => [
+        'property', 'property.currentTenancy.tenants', 'inspector',
+        'areas.items.elements',
+        'meterReadings', 'keysFobs',
+        'assetChecks.propertyAsset.propertyArea',
+        'complianceForms.sections.fields.responses',
+    ],
+]);
+
 Inventorai::inspections()->create($data);
 Inventorai::inspections()->initialize($data);
 Inventorai::inspections()->checkExisting($params);
@@ -118,6 +132,13 @@ Inventorai::inspections()->deleteCoverImage($inspectionId);
 ```
 
 ### Inspection Areas
+
+> The sub-resource methods below (Areas, Items, Elements, Meters, Keys, …) are
+> for **writes** (create / update / delete / duplicate / reorder / photo upload),
+> **mobile or offline sync** (re-pulling one slice after a local change), and
+> **leaf pagination** (large HMO inspections with hundreds of items, where
+> `include=areas.items` would return an unpaginated response). For normal reads,
+> use `Inventorai::inspections()->get($id, ['include' => [...]])` above.
 
 ```php
 Inventorai::inspectionAreas()->list($inspectionId, $params);
