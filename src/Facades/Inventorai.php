@@ -25,6 +25,7 @@ use Inventorai\SDK\InventoraiClient;
  * @method static \Inventorai\SDK\Resources\Phrases phrases()
  * @method static \Inventorai\SDK\Resources\Modifiers modifiers()
  * @method static \Inventorai\SDK\Resources\Scheduler scheduler()
+ * @method static \Inventorai\SDK\Resources\Team team()
  *
  * @see \Inventorai\SDK\InventoraiClient
  */
