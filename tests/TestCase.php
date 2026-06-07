@@ -24,6 +24,6 @@ abstract class TestCase extends OrchestraTestCase
     protected function defineEnvironment($app): void
     {
         $app['config']->set('inventorai.token', 'test-token');
-        $app['config']->set('inventorai.base_url', 'https://app.inventorai.co.uk/api/v1');
+        $app['config']->set('inventorai.base_url', 'https://api.inventorai.co.uk/v1/team');
     }
 }

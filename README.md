@@ -5,7 +5,7 @@ Laravel integration for the [Inventorai](https://app.inventorai.co.uk) API. This
 ## Requirements
 
 - PHP 8.3+
-- Laravel 12+
+- Laravel 13+
 
 ## Installation
 
@@ -34,7 +34,7 @@ An active [Inventorai](https://app.inventorai.co.uk) subscription is required. Y
 | Variable | Description | Default |
 |---|---|---|
 | `INVENTORAI_API_TOKEN` | Your team API token | _(required)_ |
-| `INVENTORAI_API_URL` | Base URL for the API | `https://api.inventorai.co.uk/v1` |
+| `INVENTORAI_API_URL` | Base URL for the API | `https://api.inventorai.co.uk/v1/team` |
 
 ## Test Connection
 
@@ -86,7 +86,7 @@ $properties = $client->properties()->list();
 
 ## Available Resources
 
-All 19 resources from the base SDK are available through the facade. See the [PHP SDK documentation](https://github.com/Inventorai/sdk-php) for full method signatures.
+All 21 resources from the base SDK are available through the facade. See the [PHP SDK documentation](https://github.com/Inventorai/sdk-php) for full method signatures.
 
 ### Properties
 
@@ -105,9 +105,12 @@ Inventorai::properties()->deleteCoverImage($propertyId);
 Inventorai::inspections()->list($params);
 Inventorai::inspections()->get($id, $params);
 Inventorai::inspections()->create($data);
+Inventorai::inspections()->initialize($data);
 Inventorai::inspections()->checkExisting($params);
 Inventorai::inspections()->comparable($params);
 Inventorai::inspections()->begin($inspectionId);
+Inventorai::inspections()->takeOver($inspectionId);
+Inventorai::inspections()->takeBackToWeb($inspectionId);
 Inventorai::inspections()->finalize($inspectionId, $data);
 Inventorai::inspections()->reschedule($inspectionId, $data);
 Inventorai::inspections()->uploadCoverImage($inspectionId, $file);
@@ -231,6 +234,22 @@ Inventorai::inspectionAi()->submitFeedback($inspectionId, $data);
 ```php
 Inventorai::propertyTemplates()->list($params);
 Inventorai::propertyTemplates()->get($id);
+```
+
+### Branches
+
+```php
+Inventorai::branches()->list($params);
+Inventorai::branches()->get($id);
+```
+
+### HMO
+
+```php
+Inventorai::hmo()->summary($inspectionId);
+Inventorai::hmo()->tenants($inspectionId);
+Inventorai::hmo()->assignTenantToArea($inspectionId, $areaId, $data);
+Inventorai::hmo()->bulkAssignTenants($inspectionId, $data);
 ```
 
 ### Components

@@ -21,5 +21,5 @@ return [
     | unless you're running a local development instance.
     |
     */
-    'base_url' => env('INVENTORAI_API_URL', 'https://api.inventorai.co.uk/v1'),
+    'base_url' => env('INVENTORAI_API_URL', 'https://api.inventorai.co.uk/v1/team'),
 ];
