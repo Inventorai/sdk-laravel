@@ -129,6 +129,8 @@ Inventorai::inspections()->finalize($inspectionId, $data);
 Inventorai::inspections()->reschedule($inspectionId, $data);
 Inventorai::inspections()->uploadCoverImage($inspectionId, $file);
 Inventorai::inspections()->deleteCoverImage($inspectionId);
+Inventorai::inspections()->reopen($inspectionId);
+Inventorai::inspections()->delete($inspectionId);
 ```
 
 ### Inspection Areas
@@ -322,6 +324,18 @@ Inventorai::modifiers()->deleteCustom($id);
 Inventorai::modifiers()->disable($id);
 Inventorai::modifiers()->enable($id);
 Inventorai::modifiers()->compose($data);
+Inventorai::modifiers()->sync();
+```
+
+### Asset Checks
+
+```php
+Inventorai::assetChecks()->update($inspectionId, $assetCheckId, [
+    'tested' => 'yes',           // yes | no | not_accessible
+    'test_result' => 'pass',     // pass | fail | na
+    'condition' => 'good',       // good | fair | poor | replace
+]);
+Inventorai::assetChecks()->uploadPhoto($inspectionId, $assetCheckId, $file);
 ```
 
 ### Scheduler
@@ -332,12 +346,6 @@ Inventorai::scheduler()->weeklyAvailability($data);
 Inventorai::scheduler()->checkConflicts($data);
 Inventorai::scheduler()->officeHours();
 Inventorai::scheduler()->estimateDuration($data);
-```
-
-### User
-
-```php
-Inventorai::user()->me();
 ```
 
 ## Error Handling

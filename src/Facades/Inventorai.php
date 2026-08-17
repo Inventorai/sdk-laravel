@@ -19,12 +19,14 @@ use Inventorai\SDK\InventoraiClient;
  * @method static \Inventorai\SDK\Resources\InspectionAi inspectionAi()
  * @method static \Inventorai\SDK\Resources\PropertyTemplates propertyTemplates()
  * @method static \Inventorai\SDK\Resources\Components components()
- * @method static \Inventorai\SDK\Resources\User user()
  * @method static \Inventorai\SDK\Resources\AddressLookup addressLookup()
  * @method static \Inventorai\SDK\Resources\Stats stats()
  * @method static \Inventorai\SDK\Resources\Phrases phrases()
  * @method static \Inventorai\SDK\Resources\Modifiers modifiers()
  * @method static \Inventorai\SDK\Resources\Scheduler scheduler()
+ * @method static \Inventorai\SDK\Resources\AssetChecks assetChecks()
+ * @method static \Inventorai\SDK\Resources\Branches branches()
+ * @method static \Inventorai\SDK\Resources\Hmo hmo()
  * @method static \Inventorai\SDK\Resources\Team team()
  *
  * @see \Inventorai\SDK\InventoraiClient
