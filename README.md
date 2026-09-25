@@ -29,7 +29,7 @@ This creates `config/inventorai.php`. Add your API token to `.env`:
 INVENTORAI_API_TOKEN=your-api-token-here
 ```
 
-An active [Inventorai](https://app.inventorai.co.uk) subscription is required. You can generate an API token from **Team Settings > API** in your dashboard.
+An active [Inventorai](https://app.inventorai.co.uk) subscription is required. You can generate an API token from **Team > API & Webhooks > API Tokens** in your dashboard.
 
 | Variable | Description | Default |
 |---|---|---|

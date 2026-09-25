@@ -28,6 +28,9 @@ use Inventorai\SDK\InventoraiClient;
  * @method static \Inventorai\SDK\Resources\Branches branches()
  * @method static \Inventorai\SDK\Resources\Hmo hmo()
  * @method static \Inventorai\SDK\Resources\Team team()
+ * @method static \Inventorai\SDK\Resources\Clients clients()
+ * @method static \Inventorai\SDK\Resources\Hazards hazards()
+ * @method static \Inventorai\SDK\Resources\Vocabulary vocabulary()
  *
  * @see \Inventorai\SDK\InventoraiClient
  */
