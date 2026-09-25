@@ -13,7 +13,7 @@ Laravel integration for the [Inventorai](https://app.inventorai.co.uk) API. This
 composer require inventorai/laravel
 ```
 
-The package uses Laravel's auto-discovery, so the service provider and facade are registered automatically. The base `inventorai/sdk` package is pulled in as a dependency — you don't need to install it separately.
+The package uses Laravel's auto-discovery, so the service provider and facade are registered automatically. The base `inventorai/sdk` package is pulled in as a dependency, so you don't need to install it separately.
 
 ## Configuration
 
@@ -104,7 +104,7 @@ Inventorai::properties()->deleteCoverImage($propertyId);
 ```php
 Inventorai::inspections()->list($params);
 
-// One call returns the whole inspection tree — property, tenancy, areas →
+// One call returns the whole inspection tree: property, tenancy, areas →
 // items → elements (with photos auto-loaded), meter readings, keys, asset
 // checks, and compliance form responses. Prefer this over chaining the
 // sub-resource list() calls below for reads.
